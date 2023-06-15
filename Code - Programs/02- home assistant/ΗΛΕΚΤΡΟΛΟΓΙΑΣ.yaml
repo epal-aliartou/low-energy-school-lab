@@ -1,0 +1,40 @@
+title: ΕΡΓΑΣΤΗΡΙΟ ΗΛΕΚΤΡΟΛΟΓΙΑΣ
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: entities
+        entities:
+          - entity: switch.tasmota
+            icon: mdi:electric-switch
+            name: ΕΛΕΓΧΟΣ ΦΟΡΤΙΟΥ
+          - entity: sensor.tasmota_energy_today
+          - entity: sensor.tasmota_energy_total
+          - entity: sensor.tasmota_energy_yesterday
+          - entity: sensor.tasmota_energy_power
+          - entity: sensor.tasmota_energy_factor
+          - entity: sensor.tasmota_energy_reactivepower
+          - entity: sensor.tasmota_energy_apparentpower
+          - entity: sensor.tasmota_energy_current
+          - entity: sensor.tasmota_energy_voltage
+        title: ΚΑΤΑΝΑΛΩΣΗ ΕΡΓΑΣΤ. ΗΛΕΚΤΡΟΛΟΓΙΑΣ
+        header:
+          type: graph
+          entity: sensor.tasmota_energy_voltage
+          hours_to_show: 16
+        footer:
+          type: picture
+          image: https://freesvg.org/img/multimetre.png
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+        state_color: true
+        theme: vintage
+      - title: Διανομή ενέργειας σήμερα
+        type: energy-distribution
+        link_dashboard: true
+      - type: entities
+        entities:
+          - entity: input_number.time_energeias
+        title: ΚΟΣΤΟΣ

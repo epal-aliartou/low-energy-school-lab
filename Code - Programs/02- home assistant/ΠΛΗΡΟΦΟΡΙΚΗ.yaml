@@ -1,0 +1,45 @@
+title: ΕΡΓΑΣΤΗΡΙΟ ΠΛΗΡΟΦΟΡΙΚΗΣ
+views:
+  - path: default_view
+    title: ΠΑΡΑΚΟΛΟΥΘΗΣΗ ΚΑΤΑΝΑΛΩΣΕΩΝ
+    type: custom:grid-layout
+    subview: false
+    layout:
+      gridrows: auto
+      grid-template-columns: 50% 50%
+      grid-template-areas: |
+        "a1 a2"
+        "b1 b2"
+        "c1 c1"
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - entity: switch.tasmota
+            name: ON/OFF ΦΟΡΤΙΟΥ
+            icon: mdi:electric-switch
+          - entity: sensor.tasmota_energy_voltage
+          - entity: sensor.tasmota_energy_current
+          - entity: sensor.tasmota_energy_power
+          - entity: sensor.tasmota_energy_apparentpower
+          - entity: sensor.tasmota_energy_reactivepower
+          - entity: sensor.tasmota_energy_factor
+          - entity: sensor.tasmota_energy_today
+          - entity: sensor.tasmota_energy_yesterday
+          - entity: sensor.tasmota_energy_total
+        title: ΚΑΤΑΝΑΛΩΣΗ ΕΡΓΑΣΤ. ΠΛΗΡΟΦΟΡΙΚΗΣ
+      - type: vertical-stack
+        cards:
+          - type: picture
+            image: >-
+              https://openedtech.ellak.gr/wp-content/uploads/sites/31/2019/07/Robotics_New_Logo_06.png
+            tap_action:
+              action: none
+            hold_action:
+              action: none
+          - type: entities
+            entities:
+              - entity: input_number.time_energeias
+          - title: Διανομή ενέργειας σήμερα
+            type: energy-distribution
+            link_dashboard: true

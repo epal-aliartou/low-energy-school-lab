@@ -1,0 +1,290 @@
+title: ΤΟΜΕΑΣ ΓΕΩΠΟΝΙΑΣ
+views:
+  - path: default_view
+    title: ΘΕΡΜΟΚΗΠΙΟ
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - light.wled
+          - switch.pump1
+          - light.wled_master
+          - select.wled_playlist
+          - select.wled_preset
+        title: ΓΡΑΜΜΗ ΑΕΡΟΠΟΝΙΑΣ 1 ΘΕΡΜΟΚΗΠΙΟΥ
+        header:
+          type: picture
+          image: ./local/images/marouli4.jpg
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+      - type: entities
+        entities:
+          - light.wled_2
+          - switch.antlia_2
+          - light.wled_master_2
+          - select.wled_playlist_2
+          - select.wled_preset_2
+        title: ΓΡΑΜΜΗ ΑΕΡΟΠΟΝΙΑΣ 2 ΘΕΡΜΟΚΗΠΙΟΥ
+        header:
+          type: picture
+          image: ./local/images/laxano2.jpg
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+      - type: entities
+        entities:
+          - sensor.enviroment_dht11_humidity
+          - sensor.enviroment_dht11_dewpoint
+          - sensor.enviroment_dht11_temperature
+        title: Περιβαλλοντικές Μετρήσεις
+        header:
+          type: picture
+          image: ./local/images/sensor.jpg
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+      - type: entities
+        entities:
+          - calendar.potisma_grammes_aeroponias_1
+          - calendar.potisma_grammes_aeroponias_2
+        title: Ημερολόγιο Ενεργειών
+        header:
+          type: picture
+          image: ./local/images/water.jpg
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+      - type: entities
+        entities:
+          - entity: sensor.sun_next_midnight
+            name: Επόμενα μεσάνυχτα
+          - entity: sensor.sun_next_rising
+            name: Επόμενη ανατολή
+          - entity: sensor.sun_next_dawn
+            name: Επόμενη αυγή
+          - entity: sensor.sun_next_setting
+            name: Επόμενη δύση
+          - entity: sensor.sun_next_noon
+            name: Επόμενο μεσημέρι
+          - entity: sensor.sun_next_dusk
+            name: Επόμενο σούρουπο
+        title: Ηλιακή Διαδρομή
+        header:
+          type: picture
+          image: ./local/images/solarview4.jpg
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+      - show_current: true
+        show_forecast: true
+        type: weather-forecast
+        entity: weather.forecast_skholeio
+      - type: entities
+        entities:
+          - sensor.lexmark_mx317dn
+          - sensor.upnp_igd_kib_s_received
+          - sensor.upnp_igd_kib_s_sent
+        title: ΔΙΟΙΚΗΣΗ
+  - title: ΑΕΡΟΠΟΝΙΑ 1
+    path: aeroponics1
+    icon: ''
+    type: custom:grid-layout
+    layout:
+      gridrows: auto
+      grid-template-columns: 50% 50%
+      grid-template-areas: |
+        "h1 h1"
+        "c1 c2"
+        "f1 f1"
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: markdown
+            content: <center><b><font size=6>ΓΡΑΜΜΗ ΑΕΡΟΠΟΝΙΑΣ 1 - ΜΑΡΟΥΛΙΑ
+            card_mod:
+              style: |
+                ha-card
+                  {background: transparent;
+                   border-style: none;
+                  }
+        view_layout:
+          grid-area: h1
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: sun.sun
+              - entity: sensor.enviroment_dht11_humidity
+          - type: history-graph
+            entities:
+              - entity: sun.sun
+              - entity: sensor.enviroment_dht11_temperature
+              - entity: sensor.enviroment_dht11_dewpoint
+        view_layout:
+          grid-area: c2
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/images/marouli2.jpg
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+              - show_name: true
+                show_icon: true
+                type: button
+                entity: light.wled
+                hold_action:
+                  action: toggle
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.pump1
+          - show_current: true
+            show_forecast: true
+            type: weather-forecast
+            entity: weather.forecast_skholeio
+            name: Πρόγνωση Καιρού
+            secondary_info_attribute: wind_speed
+          - initial_view: dayGridMonth
+            type: calendar
+            entities:
+              - calendar.potisma_grammes_aeroponias_1
+            title: ΜΑΡΟΥΛΙΑ - Χρονοπρογραμματισμός Ενεργειών
+        view_layout:
+          grid-area: c1
+  - title: ΑΕΡΟΠΟΝΙΑ 2
+    path: aeroponics2
+    icon: ''
+    type: custom:grid-layout
+    layout:
+      gridrows: auto
+      grid-template-columns: 50% 50%
+      grid-template-areas: |
+        "h1 h1"
+        "c1 c2"
+        "f1 f1"
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: markdown
+            content: <center><b><font size=6>ΓΡΑΜΜΗ ΑΕΡΟΠΟΝΙΑΣ 2 - ΛΑΧΑΝΑ
+            card_mod:
+              style: |
+                ha-card
+                  {background: transparent;
+                   border-style: none;
+                  }
+        view_layout:
+          grid-area: h1
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            entities:
+              - entity: sun.sun
+              - entity: sensor.enviroment_dht11_humidity
+          - type: history-graph
+            entities:
+              - entity: sun.sun
+              - entity: sensor.enviroment_dht11_temperature
+              - entity: sensor.enviroment_dht11_dewpoint
+        view_layout:
+          grid-area: c2
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/images/laxano.jpg
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+              - show_name: true
+                show_icon: true
+                type: button
+                entity: light.wled_2
+                hold_action:
+                  action: toggle
+              - show_name: true
+                show_icon: true
+                type: button
+                tap_action:
+                  action: toggle
+                entity: switch.antlia_2
+          - show_current: true
+            show_forecast: true
+            type: weather-forecast
+            entity: weather.forecast_skholeio
+            name: Πρόγνωση Καιρού
+            secondary_info_attribute: wind_speed
+          - initial_view: dayGridMonth
+            type: calendar
+            entities:
+              - calendar.potisma_grammes_aeroponias_2
+            title: 'ΛΑΧΑΝΑ - Χρονοπρογραμματισμός Ενεργειών '
+        view_layout:
+          grid-area: c1
+  - title: ΣΤΑΤΙΣΤΙΚΑ
+    path: statistics
+    type: sidebar
+    badges: []
+    cards:
+      - chart_type: line
+        period: day
+        type: statistics-graph
+        entities:
+          - sensor.enviroment_dht11_humidity
+        stat_types:
+          - mean
+          - min
+          - max
+        days_to_show: 7
+      - chart_type: line
+        period: day
+        type: statistics-graph
+        entities:
+          - sensor.enviroment_dht11_temperature
+        stat_types:
+          - mean
+          - min
+          - max
+  - title: ΙΣΤΟΡΙΚΑ
+    path: historical
+    type: panel
+    badges: []
+    cards:
+      - type: history-graph
+        entities:
+          - entity: sun.sun
+          - entity: switch.pump1
+          - entity: switch.antlia_2
+          - entity: sensor.enviroment_dht11_humidity
+          - entity: sensor.enviroment_dht11_temperature
+          - entity: sensor.enviroment_dht11_dewpoint
+          - entity: light.wled
+          - entity: light.wled_2
+  - title: ΑΝΑΦΟΡΑ
+    path: anafora
+    type: sidebar
+    badges: []
+    cards:
+      - type: logbook
+        entities:
+          - switch.wled_nightlight_2
+          - switch.wled_sync_send_2
+          - switch.wled_sync_receive_2
+        title: ΗΜΕΡΗΣΙΑ ΑΝΑΓΟΡΑ ΓΕΓΟΝΟΤΩΝ
+        hours_to_show: 120

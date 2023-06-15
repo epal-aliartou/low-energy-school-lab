@@ -1,0 +1,52 @@
+title: ΣΧΟΛΕΙΟ
+views:
+  - path: default_view
+    title: Home
+    cards:
+      - type: picture
+        image: >-
+          https://openedtech.ellak.gr/wp-content/uploads/sites/31/2019/07/Robotics_New_Logo_06.png
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+      - type: entities
+        entities:
+          - entity: switch.antlia_2
+            name: ΠΑΡΤΕΡΙΑ ΑΝΤΛΙΑ
+        title: ΠΑΡΤΕΡΙΑ
+      - type: entities
+        entities:
+          - entity: switch.pump1
+        title: ΓΛΑΣΤΡΕΣ
+      - type: entities
+        entities:
+          - entity: schedule.potisma_1
+            name: ΓΛΑΣΤΡΕΣ ΧΡΟΝΟΠΡΟΓΡΑΜΜΑ
+          - entity: calendar.potisma_grammes_aeroponias_2
+            name: ΠΑΡΤΕΡΙΑ ΧΡΟΝΟΠΡΟΓΡΑΜΜΑ
+        title: Χρονοπρογραμματισμός
+      - type: entities
+        entities:
+          - entity: sensor.sun_next_midnight
+            name: Επόμενα μεσάνυχτα
+          - entity: sensor.sun_next_rising
+            name: Επόμενη ανατολή
+          - entity: sensor.sun_next_dawn
+            name: Επόμενη αυγή
+          - entity: sensor.sun_next_setting
+            name: Επόμενη δύση
+          - entity: sensor.sun_next_noon
+            name: Επόμενο μεσημέρι
+          - entity: sensor.sun_next_dusk
+            name: Επόμενο σούρουπο
+        title: Ηλιακή Διαδρομή
+      - type: weather-forecast
+        entity: weather.forecast_skholeio
+        show_forecast: false
+      - type: entities
+        entities:
+          - sensor.enviroment_dht11_humidity
+          - sensor.enviroment_dht11_dewpoint
+          - sensor.enviroment_dht11_temperature
+        title: Θερμοκήπιο
