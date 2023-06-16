@@ -11,12 +11,19 @@ ______
 
 # ΥΛΟΠΟΙΗΣΗ -ΣΥΝΔΕΣΜΟΙ
 
-[1-Απλός ενισχυτής ήχου μικρής ισχύος, με Φωτεινή ένδειξη έντασης και ρύθμιση ευαισθησίας](Hardware-Design/speakers-amplifier.md)
+Στους παρακάτω συνδέσμους στην παράγραφο αυτή , περιγράφεται η ακριβής τελική υλοποίηση.
 
-[2- Απλή Γεννήτρια Συχνοτήτων ](Hardware-Design/function_generator.md)
-______
+* [Περιγραφή Υλοποίησης του Συστήματος](Documentation/ΕΡΓΟ.md) 
+* [Περιγραφή Υλοποίησης Υπ1-Απλός ενισχυτής ήχου μικρής ισχύος, με Φωτεινή ένδειξη έντασης και ρύθμιση ευαισθησίας](Hardware-Design/speakers-amplifier.md)
+* [Περιγραφή Υλοποίησης Υπ2-Απλή Γεννήτρια Συχνοτήτων ](Hardware-Design/function_generator.md)
+* [Σειρά βίντεο (youtube playlist) σχετικά με την υλοποίηση του έργου και λεπτομέρειες](https://www.youtube.com/watch?v=ruqqzRpk0W0&list=PL3BpHR7KN3z3waL9Z8BeiSzCeSS2bain2&ab_channel=%CE%95%CE%A0%CE%91%CE%9B%CE%91%CE%9B%CE%99%CE%91%CE%A1%CE%A4%CE%9F%CE%A5%CE%B5%CE%BA%CF%80%CE%B1%CE%B9%CE%B4%CE%B5%CF%85%CF%84%CE%B9%CE%BA%CE%ACproject) 
 
-# Εποπτικό Διάγραμμα του Συστήματος
+
+* [Ιστοσελίδα-Άρθρο του Έργου σε openedtech.dev.ellak.gr](https://openedtech.dev.ellak.gr/robotics2023/esperino-epal-aliartou-exikonomisi-energias-sta-ergastiria-tou-scholiou/)
+____
+
+
+# Λογότυπο του Συστήματος
 
 ___
 
